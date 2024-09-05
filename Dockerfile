@@ -5,7 +5,7 @@ FROM python:3.10-slim-bullseye as builder
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
       build-essential \
-      libffi-dev && \
+      libffi-dev \
       git && \
     apt-get clean -y
 
