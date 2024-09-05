@@ -33,7 +33,7 @@ COPY --from=builder /srv/docker-ansible /srv/docker-ansible
 
 COPY lint.sh /srv/docker-ansible/env/bin/lint.sh
 
-RUN /srv/docker-ansible/env/bin/ansible-galaxy install -r /srv/ansible/galaxy-requirements.yaml
+RUN /srv/docker-ansible/env/bin/ansible-galaxy install -r /srv/docker-ansible/galaxy-requirements.yaml
 
 ENTRYPOINT []
 
