@@ -6,6 +6,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
       build-essential \
       libffi-dev && \
+      git && \
     apt-get clean -y
 
 RUN mkdir -p /srv/docker-ansible
