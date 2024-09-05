@@ -17,6 +17,8 @@ COPY galaxy-requirements.yaml /srv/docker-ansible/galaxy-requirements.yaml
 RUN python3 -m venv /srv/docker-ansible/env && \
   /srv/docker-ansible/env/bin/pip install -r /srv/docker-ansible/requirements.txt
 
+RUN /srv/docker-ansible/env/bin/ansible-galaxy install -p /srv/docker-ansible/galaxy-roles -r /srv/docker-ansible/galaxy-requirements.yaml
+
 # Final Image
 
 FROM python:3.10-slim-bullseye
@@ -32,8 +34,6 @@ RUN apt-get update && \
 COPY --from=builder /srv/docker-ansible /srv/docker-ansible
 
 COPY lint.sh /srv/docker-ansible/env/bin/lint.sh
-
-RUN /srv/docker-ansible/env/bin/ansible-galaxy install -r /srv/docker-ansible/galaxy-requirements.yaml
 
 ENTRYPOINT []
 
