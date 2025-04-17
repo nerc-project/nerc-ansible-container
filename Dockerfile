@@ -1,6 +1,6 @@
 # Builder Image
 
-FROM python:3.10-slim-bullseye as builder
+FROM python:3.12.8-slim-bookworm as builder
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -19,7 +19,7 @@ RUN python3 -m venv /srv/docker-ansible/env && \
 
 # Final Image
 
-FROM python:3.10-slim-bullseye
+FROM python:3.12.8-slim-bookworm
 
 MAINTAINER New England Research Cloud (NERC) "https://nerc.mghpcc.org"
 
