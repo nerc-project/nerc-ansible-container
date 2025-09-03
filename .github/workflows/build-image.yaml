@@ -1,0 +1,15 @@
+name: Build & Push Image ( using nerc-github-workflows )
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: nerc-project/nerc-github-workflows/.github/workflows/build-image.yaml@main
+
+    with:
+      image: nerc-ansible-container-test
