@@ -1,6 +1,6 @@
 # Builder Image
 
-FROM python:3.12.8-slim-bookworm as builder
+FROM python:3.12.8-slim-bookworm AS builder
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -21,7 +21,7 @@ RUN python3 -m venv /srv/docker-ansible/env && \
 
 FROM python:3.12.8-slim-bookworm
 
-MAINTAINER New England Research Cloud (NERC) "https://nerc.mghpcc.org"
+LABEL org.opencontainers.image.authors="https://nerc.mghpcc.org"
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
