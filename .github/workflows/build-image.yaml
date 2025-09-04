@@ -12,5 +12,5 @@ jobs:
     uses: nerc-project/nerc-github-workflows/.github/workflows/build-image.yaml@main
 
     with:
-      image: nerc-ansible-container
+      image: ghcr.io/nerc-project/nerc-ansible-container
     secrets: inherit
